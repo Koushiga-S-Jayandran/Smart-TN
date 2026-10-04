@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Details</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="details"></div>
+
+<script>
+let place = JSON.parse(localStorage.getItem("place"));
+
+document.getElementById("details").innerHTML = `
+  <h2>${place.name}</h2>
+  <img src="${place.img}" width="300">
+  <p>Distance: ${place.distance} km</p>
+  <p>Crowd: ${place.crowd}</p>
+
+  <button onclick="goRapido()">Go via Rapido</button>
+`;
+
+function goRapido() {
+  window.open("https://rapido.bike/", "_blank");
+}
+</script>
+
+</body>
+</html>
